@@ -301,7 +301,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .value { display: grid; gap: 2px; padding: 16px 18px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--border); }
 .value strong { font-family: var(--font-head); }
 .value span { color: var(--muted); font-size: 0.92rem; }
-.about__card { padding: 32px; border-radius: 24px; background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.12)), var(--surface); border: 1px solid var(--border-strong); position: sticky; top: calc(var(--nav-h) + 24px); }
+.about__cards { display: grid; gap: 18px; position: sticky; top: calc(var(--nav-h) + 24px); }
+.about__card { padding: 28px; border-radius: 24px; background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.12)), var(--surface); border: 1px solid var(--border-strong); }
 .founder { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
 .founder div { display: flex; flex-direction: column; }
 .founder span { color: var(--muted); font-size: 0.9rem; }
@@ -387,7 +388,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .featured { padding: 28px; }
   .featured__visual { order: -1; }
-  .about__card { position: static; }
+  .about__cards { position: static; }
   .section { padding: 80px 0; }
   .cta-strip { flex-direction: column; align-items: flex-start; }
 }
