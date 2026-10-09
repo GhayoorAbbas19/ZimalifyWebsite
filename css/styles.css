@@ -306,7 +306,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .founder { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
 .founder div { display: flex; flex-direction: column; }
 .founder span { color: var(--muted); font-size: 0.9rem; }
-.founder__avatar { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: var(--grad); font-family: var(--font-head); font-weight: 700; font-size: 1.3rem; color: #fff; box-shadow: 0 10px 30px rgba(99,102,241,0.4); }
+.founder__avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid transparent; background: var(--grad) border-box; box-shadow: 0 10px 30px rgba(99,102,241,0.4); }
 .about__card p { font-style: italic; color: var(--text); font-size: 1.05rem; line-height: 1.7; }
 .about__links { display: flex; gap: 18px; font-weight: 600; font-size: 0.9rem; color: var(--accent-3); }
 .about__links a:hover { text-decoration: underline; }
