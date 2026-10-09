@@ -406,3 +406,84 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .section { padding: 64px 0; }
   .marquee__track { animation-duration: 18s; }
 }
+
+/* ---------- Language switch ---------- */
+.lang { display: inline-flex; padding: 3px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border-strong); gap: 2px; }
+.lang button { padding: 5px 11px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); transition: background 0.25s, color 0.25s; }
+.lang button:hover { color: var(--text); }
+.lang button[aria-pressed="true"] { background: var(--grad); color: #fff; }
+@media (max-width: 880px) { .lang { margin: 14px 0 4px; align-self: flex-start; } }
+
+/* ---------- Scroll progress ---------- */
+.progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: var(--grad); transform-origin: left; transform: scaleX(0); z-index: 200; pointer-events: none; }
+
+/* ---------- Animations ---------- */
+/* Hero headline: words rise in one after another */
+.hero__title .w { display: inline-block; opacity: 0; transform: translateY(0.6em) rotate(2deg); animation: wordIn 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; animation-delay: calc(var(--i) * 70ms + 150ms); }
+@keyframes wordIn { to { opacity: 1; transform: none; } }
+
+/* Gradient text shimmer */
+.grad-text { background-size: 200% 200%; animation: shimmer 6s ease-in-out infinite; }
+@keyframes shimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+/* Hero glows drift slowly */
+.hero__glow--1 { animation: drift1 18s ease-in-out infinite alternate; }
+.hero__glow--2 { animation: drift2 22s ease-in-out infinite alternate; }
+@keyframes drift1 { to { transform: translate(80px, 60px) scale(1.1); } }
+@keyframes drift2 { to { transform: translate(-70px, -40px) scale(0.95); } }
+
+/* Staggered children inside revealed groups */
+.stagger > * { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: calc(var(--i, 0) * 80ms); }
+.stagger.in > *, .in .stagger > * { opacity: 1; transform: none; }
+.app-card { animation: none; }
+
+/* 3D tilt wrapper for the hero phone */
+.tilt { transform-style: preserve-3d; transition: transform 0.15s ease-out; will-change: transform; }
+.tilt .phone { animation: floaty 7s ease-in-out infinite; }
+
+/* Cursor spotlight on cards */
+.spot { position: relative; overflow: hidden; }
+.spot::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.4s;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(139, 92, 246, 0.18), transparent 60%); }
+.spot:hover::before { opacity: 1; }
+.spot > * { position: relative; }
+
+/* Button shine sweep */
+.btn--primary { position: relative; overflow: hidden; }
+.btn--primary::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.6s ease; }
+.btn--primary:hover::after { left: 125%; }
+
+/* Process connector draws in */
+.process::before { transform: scaleX(0); transform-origin: left; transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s; }
+.process.in::before { transform: scaleX(1); }
+.step__num { transition: transform 0.3s, box-shadow 0.3s; }
+.step:hover .step__num { transform: rotate(-6deg) scale(1.08); box-shadow: 0 12px 28px rgba(99,102,241,0.5); }
+
+/* Service icons nudge on hover */
+.service__icon { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), background 0.35s; }
+.service:hover .service__icon { transform: translateY(-4px) rotate(-4deg); background: linear-gradient(135deg, rgba(59,130,246,0.4), rgba(139,92,246,0.4)); }
+
+/* App card icon pop */
+.app-card .app-icon { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.app-card:hover .app-icon { transform: scale(1.08) rotate(-3deg); }
+
+/* Featured screenshots settle into place */
+.featured.in .phone--shot-0 { animation: shotIn0 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.featured.in .phone--shot-1 { animation: shotIn1 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s both; }
+.featured.in .phone--shot-2 { animation: shotIn2 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s both; }
+@keyframes shotIn0 { from { opacity: 0; transform: translateX(-50%) translateY(40px); } to { opacity: 1; transform: translateX(-50%); } }
+@keyframes shotIn1 { from { opacity: 0; transform: rotate(0) scale(0.8) translateX(60px); } to { opacity: 0.9; transform: rotate(-8deg) scale(0.88); } }
+@keyframes shotIn2 { from { opacity: 0; transform: rotate(0) scale(0.8) translateX(-60px); } to { opacity: 0.9; transform: rotate(8deg) scale(0.88); } }
+
+/* Language fade when switching */
+.lang-fade [data-i18n], .lang-fade .app-grid, .lang-fade .featured { transition: opacity 0.25s; }
+.lang-fade.switching [data-i18n], .lang-fade.switching .app-grid, .lang-fade.switching .featured { opacity: 0; }
+
+/* Reduced motion: keep content visible, drop the flourishes */
+@media (prefers-reduced-motion: reduce) {
+  .hero__title .w { opacity: 1; transform: none; animation: none; }
+  .stagger > * { opacity: 1; transform: none; transition: none; }
+  .grad-text, .hero__glow--1, .hero__glow--2, .tilt .phone, .featured.in .phone--shot-0, .featured.in .phone--shot-1, .featured.in .phone--shot-2 { animation: none; }
+  .process::before { transform: none; }
+  .btn--primary::after { display: none; }
+}

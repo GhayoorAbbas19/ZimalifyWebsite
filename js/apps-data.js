@@ -23,11 +23,14 @@
      price       optional, e.g. "Free" or "$2.99"
      requires    optional, e.g. "iOS 17.6+" / "Android 8+"
      version     optional current version string
+     it          optional Italian copy: { tagline, description, highlights }
+                 (add more languages the same way, e.g. "de": {...})
    ========================================================= */
 
 window.ZIMALIFY_APPS = [
   {
     id: "cleanerzx",
+    it: { tagline: "Pulizia intelligente dello spazio su iPhone, con l'AI.", description: "CleanerZX analizza la tua libreria con l'AI sul dispositivo e raggruppa duplicati, scatti simili, screenshot, video pesanti e contatti inutilizzati in raccolte rapide da rivedere. Scorri per tenere o eliminare: ogni cancellazione viene prima confermata da te.", highlights: ["Rilevamento di foto duplicate e simili", "Screenshot, video pesanti e contatti inutilizzati", "Pulizia a scorrimento con revisione sicura prima di eliminare"] },
     name: "CleanerZX",
     subtitle: "Storage Cleaner",
     tagline: "Smart AI storage cleaner for iPhone.",
@@ -48,6 +51,7 @@ window.ZIMALIFY_APPS = [
   },
   {
     id: "finovo",
+    it: { tagline: "Sai dove vanno i tuoi soldi, senza collegare la banca.", description: "Tracciamento spese, budget, scansione scontrini, abbonamenti e più portafogli in un'unica vista chiara. Registra entrate e uscite, vedi quanto resta e capisci le tue finanze con grafici facili da leggere.", highlights: ["Budget settimanali, mensili e annuali con limiti per categoria", "Scansione scontrini e calendario delle spese ricorrenti", "Più portafogli, trasferimenti e spese condivise"] },
     name: "Finovo",
     subtitle: "Budget Expense Tracker",
     tagline: "Know where your money goes, no bank connection needed.",
@@ -67,6 +71,7 @@ window.ZIMALIFY_APPS = [
   },
   {
     id: "mealburn",
+    it: { tagline: "Fotografa un pasto, ottieni calorie e macro in pochi secondi.", description: "Scansiona la foto di un pasto con l'AI per stimare calorie, proteine, carboidrati e grassi, oppure cerca in un ampio database alimentare. Bilancia ciò che mangi con ciò che bruci tramite Apple Salute, con serie, widget e andamenti settimanali.", highlights: ["Scansione AI delle foto per calorie e macro", "Budget calorico personale: mangiate, bruciate, rimanenti", "Sincronizzazione con Apple Salute, serie e widget"] },
     name: "MealBurn",
     subtitle: "Calorie Counter",
     tagline: "Snap a meal, get calories and macros in seconds.",
@@ -86,6 +91,7 @@ window.ZIMALIFY_APPS = [
   },
   {
     id: "pulsestate",
+    it: { tagline: "Capisci il tuo corpo. Allenati meglio. Recupera meglio.", description: "PulseState riunisce HRV, frequenza cardiaca a riposo, sonno, attività e allenamenti da Apple Salute in un'unica vista pensata per gli atleti, confrontata con la tua baseline personale. Stato del corpo giornaliero, punteggio di recupero, stress, fasi del sonno, carico di allenamento e diario, tutto su una sola timeline.", highlights: ["Punteggio di recupero da HRV, sonno e frequenza a riposo", "Fasi del sonno, andamento dello stress e carico di allenamento", "Pianifica una sessione e vedi l'effetto sul tuo stato"] },
     name: "PulseState",
     subtitle: "Recovery & HRV",
     tagline: "Understand your body. Train smarter. Recover better.",
@@ -105,6 +111,7 @@ window.ZIMALIFY_APPS = [
   },
   {
     id: "siptrack",
+    it: { tagline: "Vedi la tua idratazione. Costruisci l'abitudine.", description: "Un tracker dell'acqua semplice e visivo. Registra le bevute in pochi secondi, imposta un obiettivo giornaliero, ricevi promemoria discreti e guarda il livello di idratazione riempirsi durante la giornata.", highlights: ["Livello di idratazione visivo, non solo numeri", "Registra una bevuta in due tocchi", "Obiettivo giornaliero, promemoria e storico"] },
     name: "SipTrack",
     subtitle: "Water Tracker",
     tagline: "See your hydration. Build the habit.",

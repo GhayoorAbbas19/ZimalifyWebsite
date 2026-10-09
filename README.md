@@ -13,7 +13,8 @@ python3 -m http.server 8080
 | File | What it is |
 |---|---|
 | `index.html` | Main one-page site |
-| `js/apps-data.js` | **Edit this** to add/change apps, store links, testimonials |
+| `js/apps-data.js` | **Edit this** to add/change apps, store links, testimonials. Each app has an optional `it` block for Italian copy |
+| `js/i18n.js` | **All UI text in English and Italian.** Edit strings here; HTML uses `data-i18n="key"` hooks |
 | `js/main.js` | Filters, animations, form handling |
 | `css/styles.css` | All styling; brand colors are in `:root` at the top |
 | `privacy.html`, `terms.html` | Legal pages (link these from App Store Connect / Play Console) |
@@ -52,6 +53,19 @@ python3 -m http.server 8080
 5. Every later change: commit and push from GitHub Desktop; the site updates within about a minute.
 
 **Alternatives:** Netlify/Vercel (drag the folder onto the dashboard, no build command, root as publish directory, then add the domain in their UI), or cPanel/FTP (upload everything to `public_html`).
+
+## Languages
+
+The home page is bilingual (English / Italian) with a switch in the nav. The language is chosen in this order: `?lang=it` in the URL, the visitor's saved choice, then the browser language, falling back to English. Legal and support pages stay in English.
+
+- UI strings: `js/i18n.js` (`en` and `it` blocks, same keys). Strings containing HTML tags are inserted as HTML.
+- App copy: the `it: { tagline, description, highlights }` block on each app in `js/apps-data.js`.
+- To add a language: add a code to `ZIMALIFY_LANGS`, copy the `it` block in `js/i18n.js`, translate, and optionally add the same code block to each app.
+- Share an Italian link with `https://zimalify.com/?lang=it`.
+
+## Animations
+
+Hero words rise in one by one, the gradient text shimmers, hero glows drift, cards stagger in as you scroll, the hero phone tilts toward the cursor, cards get a cursor spotlight, buttons have a shine sweep, the process line draws in, and a progress bar tracks scroll at the top. Everything is disabled automatically when the visitor's OS has "Reduce motion" on.
 
 ## Brand
 

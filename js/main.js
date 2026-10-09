@@ -5,32 +5,121 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-  /* ---------- Nav: scroll state + mobile toggle ---------- */
+  /* =====================================================
+     i18n
+     ===================================================== */
+  const DICT = window.ZIMALIFY_I18N || { en: {} };
+  const LANGS = window.ZIMALIFY_LANGS || [{ code: 'en', label: 'EN', name: 'English' }];
+  const detectLang = () => {
+    const fromUrl = new URLSearchParams(location.search).get('lang');
+    if (fromUrl && DICT[fromUrl]) return fromUrl;
+    try { const saved = localStorage.getItem('zimalify-lang'); if (saved && DICT[saved]) return saved; } catch (_) {}
+    const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    return DICT[nav] ? nav : 'en';
+  };
+  let lang = detectLang();
+  const t = key => (DICT[lang] && DICT[lang][key]) ?? DICT.en[key] ?? key;
+  const tr = (obj, field) => (obj[lang] && obj[lang][field]) ?? obj[field];   // per-app localized field with fallback
+
+  const applyTranslations = () => {
+    document.documentElement.lang = lang;
+    document.title = t('meta.title');
+    $('meta[name="description"]')?.setAttribute('content', t('meta.description'));
+    $$('[data-i18n]').forEach(el => {
+      const v = t(el.dataset.i18n);
+      if (/<[a-z][\s\S]*>/i.test(v)) el.innerHTML = v; else el.textContent = v;
+    });
+    $$('[data-i18n-placeholder]').forEach(el => el.placeholder = t(el.dataset.i18nPlaceholder));
+    $$('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+    $$('#langSwitch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    splitHeroWords();
+  };
+
+  const langSwitch = $('#langSwitch');
+  if (langSwitch) {
+    langSwitch.innerHTML = LANGS.map(l => `<button type="button" data-lang="${l.code}" lang="${l.code}" title="${esc(l.name)}" aria-pressed="false">${esc(l.label)}</button>`).join('');
+    langSwitch.addEventListener('click', e => {
+      const b = e.target.closest('button[data-lang]');
+      if (!b || b.dataset.lang === lang) return;
+      setLang(b.dataset.lang);
+    });
+  }
+  const setLang = next => {
+    const body = document.body;
+    body.classList.add('lang-fade', 'switching');
+    const swap = () => {
+      lang = next;
+      try { localStorage.setItem('zimalify-lang', lang); } catch (_) {}
+      applyTranslations();
+      renderApps();
+      body.classList.remove('switching');
+    };
+    reduceMotion ? swap() : setTimeout(swap, 250);
+  };
+
+  /* Hero headline: wrap words so they can animate in */
+  const splitHeroWords = () => {
+    const h = $('#heroTitle');
+    if (!h || reduceMotion) return;
+    let i = 0;
+    const wrap = node => {
+      if (node.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          const s = document.createElement('span'); s.className = 'w'; s.style.setProperty('--i', i++); s.textContent = part; frag.appendChild(s);
+        });
+        node.replaceWith(frag);
+      } else if (node.nodeType === 1 && node.classList.contains('grad-text')) {
+        // keep gradient text as one unit: animated descendants would break background-clip:text
+        node.classList.add('w'); node.style.setProperty('--i', i++);
+      } else if (node.nodeType === 1 && !node.classList.contains('w')) {
+        Array.from(node.childNodes).forEach(wrap);
+      }
+    };
+    Array.from(h.childNodes).forEach(wrap);
+  };
+
+  /* =====================================================
+     Nav: scroll state, progress bar, mobile toggle
+     ===================================================== */
   const nav = $('#nav');
   const navToggle = $('#navToggle');
   const navLinks = $('#navLinks');
+  const progress = $('#progress');
 
   const onScroll = () => {
     nav.classList.toggle('nav--scrolled', window.scrollY > 10);
     $('#toTop').classList.toggle('to-top--show', window.scrollY > 600);
+    if (progress) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('nav__links--open');
-    navToggle.classList.toggle('nav__toggle--open', open);
-    navToggle.setAttribute('aria-expanded', String(open));
-    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    document.body.classList.toggle('no-scroll', open);
-  });
-  $$('a', navLinks).forEach(a => a.addEventListener('click', () => {
+  const closeMenu = () => {
     navLinks.classList.remove('nav__links--open');
     navToggle.classList.remove('nav__toggle--open');
     navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', t('nav.menuOpen'));
     document.body.classList.remove('no-scroll');
-  }));
+  };
+  navToggle.addEventListener('click', () => {
+    const open = !navLinks.classList.contains('nav__links--open');
+    if (!open) return closeMenu();
+    navLinks.classList.add('nav__links--open');
+    navToggle.classList.add('nav__toggle--open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', t('nav.menuClose'));
+    document.body.classList.add('no-scroll');
+  });
+  $$('a', navLinks).forEach(a => a.addEventListener('click', closeMenu));
 
   /* Active link highlight */
   const sections = $$('main section[id]');
@@ -49,7 +138,11 @@
     sections.forEach(s => spy.observe(s));
   }
 
-  /* ---------- Reveal on scroll ---------- */
+  /* =====================================================
+     Reveal on scroll + stagger indices
+     ===================================================== */
+  const indexStagger = root => $$('.stagger', root.parentElement || document).forEach(g => Array.from(g.children).forEach((c, i) => c.style.setProperty('--i', i)));
+  indexStagger(document.body);
   const reveals = $$('.reveal');
   if (reduceMotion || !('IntersectionObserver' in window)) {
     reveals.forEach(el => el.classList.add('in'));
@@ -60,7 +153,9 @@
     reveals.forEach(el => io.observe(el));
   }
 
-  /* ---------- Hero counters ---------- */
+  /* =====================================================
+     Hero counters, tilt, spotlight
+     ===================================================== */
   const counters = $$('#heroStats [data-count]');
   const runCounter = el => {
     const target = parseFloat(el.dataset.count);
@@ -83,9 +178,34 @@
     cio.observe($('#heroStats'));
   } else { counters.forEach(runCounter); }
 
-  /* ---------- Apps ---------- */
+  /* Phone tilts toward the cursor */
+  const tilt = $('#heroTilt');
+  const heroVisual = $('#heroVisual');
+  if (tilt && heroVisual && finePointer && !reduceMotion) {
+    heroVisual.addEventListener('mousemove', e => {
+      const r = heroVisual.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      tilt.style.transform = `perspective(1200px) rotateY(${x * 14}deg) rotateX(${-y * 12}deg)`;
+    });
+    heroVisual.addEventListener('mouseleave', () => { tilt.style.transition = 'transform 0.6s ease'; tilt.style.transform = ''; setTimeout(() => tilt.style.transition = '', 600); });
+  }
+
+  /* Spotlight follows the cursor on .spot cards (delegated, works for re-rendered cards) */
+  if (finePointer && !reduceMotion) {
+    document.addEventListener('mousemove', e => {
+      const card = e.target.closest('.spot');
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+  }
+
+  /* =====================================================
+     Apps
+     ===================================================== */
   const apps = window.ZIMALIFY_APPS || [];
-  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   const iconHTML = (app, size = 'md') => {
     const ic = app.icon || {};
@@ -99,29 +219,30 @@
 
   const badges = (app, size = '') => {
     let h = '';
-    if (app.appStore) h += `<a class="badge ${size}" href="${esc(app.appStore)}" target="_blank" rel="noopener">${appleSVG}<span><small>Download on the</small>App Store</span></a>`;
-    if (app.playStore) h += `<a class="badge ${size}" href="${esc(app.playStore)}" target="_blank" rel="noopener">${playSVG}<span><small>Get it on</small>Google Play</span></a>`;
+    if (app.appStore) h += `<a class="badge ${size}" href="${esc(app.appStore)}" target="_blank" rel="noopener">${appleSVG}<span><small>${esc(t('badge.apple'))}</small>App Store</span></a>`;
+    if (app.playStore) h += `<a class="badge ${size}" href="${esc(app.playStore)}" target="_blank" rel="noopener">${playSVG}<span><small>${esc(t('badge.google'))}</small>Google Play</span></a>`;
     return h;
   };
-
   const platformPills = app => app.platforms.map(p => `<span class="pill pill--${p}">${p === 'ios' ? 'iOS' : 'Android'}</span>`).join('');
-
   const stars = n => '★'.repeat(Math.round(n)) + '☆'.repeat(5 - Math.round(n));
+  const cat = c => t('cat.' + c) === 'cat.' + c ? c : t('cat.' + c);
+  const price = p => p ? (t('apps.price.' + p) === 'apps.price.' + p ? p : t('apps.price.' + p)) : '';
 
-  /* Featured */
   const featured = apps.find(a => a.featured);
   const featuredEl = $('#featuredApp');
-  if (featured && featuredEl) {
+  const renderFeatured = () => {
+    if (!featured || !featuredEl) return;
+    const highlights = tr(featured, 'highlights');
     featuredEl.innerHTML = `
       <div class="featured__copy">
-        <span class="featured__label">Featured app</span>
-        <div class="featured__title">${iconHTML(featured, 'lg')}<div><h3>${esc(featured.name)}${featured.subtitle ? ` <small>${esc(featured.subtitle)}</small>` : ''}</h3><p>${esc(featured.tagline)}</p></div></div>
-        <p class="featured__desc">${esc(featured.description)}</p>
-        ${featured.highlights ? `<ul class="featured__list">${featured.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>` : ''}
+        <span class="featured__label">${esc(t('apps.featured'))}</span>
+        <div class="featured__title">${iconHTML(featured, 'lg')}<div><h3>${esc(featured.name)}${featured.subtitle ? ` <small>${esc(featured.subtitle)}</small>` : ''}</h3><p>${esc(tr(featured, 'tagline'))}</p></div></div>
+        <p class="featured__desc">${esc(tr(featured, 'description'))}</p>
+        ${highlights ? `<ul class="featured__list">${highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>` : ''}
         <div class="featured__meta">
           ${featured.rating ? `<span class="rating"><span class="stars">${stars(featured.rating)}</span> ${featured.rating.toFixed(1)}</span>` : ''}
-          ${featured.downloads ? `<span class="meta">${esc(featured.downloads)} downloads</span>` : ''}
-          ${featured.price ? `<span class="meta">${esc(featured.price)}</span>` : ''}
+          ${featured.downloads ? `<span class="meta">${esc(featured.downloads)} ${esc(t('apps.downloads'))}</span>` : ''}
+          ${featured.price ? `<span class="meta">${esc(price(featured.price))}</span>` : ''}
           ${featured.requires ? `<span class="meta">${esc(featured.requires)}</span>` : ''}
           <span class="meta">${platformPills(featured)}</span>
         </div>
@@ -130,7 +251,7 @@
       <div class="featured__visual" aria-hidden="true">
         ${featured.screenshots && featured.screenshots.length ? `
         <div class="shots">
-          ${featured.screenshots.slice(0,3).map((src, i) => `<div class="phone phone--shot phone--shot-${i}"><div class="phone__notch"></div><div class="phone__screen phone__screen--img"><img src="${esc(src)}" alt="" loading="lazy"></div></div>`).join('')}
+          ${featured.screenshots.slice(0, 3).map((src, i) => `<div class="phone phone--shot phone--shot-${i}"><div class="phone__notch"></div><div class="phone__screen phone__screen--img"><img src="${esc(src)}" alt="" loading="lazy"></div></div>`).join('')}
         </div>` : `
         <div class="phone phone--sm">
           <div class="phone__notch"></div>
@@ -145,77 +266,74 @@
           </div>
         </div>`}
       </div>`;
-  }
+  };
 
-  /* Filters + grid */
   const grid = $('#appGrid');
   const filtersEl = $('#appFilters');
-  const categories = [...new Set(apps.map(a => a.category))].sort();
-  const filterDefs = [
-    { key: 'all', label: `All apps <b>${apps.length}</b>` },
-    { key: 'ios', label: `iOS <b>${apps.filter(a => a.platforms.includes('ios')).length}</b>` },
-    { key: 'android', label: `Android <b>${apps.filter(a => a.platforms.includes('android')).length}</b>` },
-    ...categories.map(c => ({ key: 'cat:' + c, label: esc(c) }))
-  ];
-  if (filtersEl) {
-    filtersEl.innerHTML = filterDefs.filter(f => !/<b>0<\/b>/.test(f.label)).map((f, i) => `<button class="chip${i === 0 ? ' chip--on' : ''}" role="tab" aria-selected="${i === 0}" data-filter="${esc(f.key)}">${f.label}</button>`).join('');
-  }
+  let activeFilter = 'all';
+  const renderFilters = () => {
+    if (!filtersEl) return;
+    const categories = [...new Set(apps.map(a => a.category))].sort();
+    const defs = [
+      { key: 'all', label: `${esc(t('apps.all'))} <b>${apps.length}</b>`, n: apps.length },
+      { key: 'ios', label: `iOS <b>${apps.filter(a => a.platforms.includes('ios')).length}</b>`, n: apps.filter(a => a.platforms.includes('ios')).length },
+      { key: 'android', label: `Android <b>${apps.filter(a => a.platforms.includes('android')).length}</b>`, n: apps.filter(a => a.platforms.includes('android')).length },
+      ...categories.map(c => ({ key: 'cat:' + c, label: esc(cat(c)), n: 1 }))
+    ].filter(f => f.n > 0);
+    filtersEl.innerHTML = defs.map(f => `<button class="chip${f.key === activeFilter ? ' chip--on' : ''}" role="tab" aria-selected="${f.key === activeFilter}" data-filter="${esc(f.key)}">${f.label}</button>`).join('');
+  };
 
   const cardHTML = app => `
-    <article class="app-card" data-platforms="${app.platforms.join(' ')}" data-cat="${esc(app.category)}">
+    <article class="app-card spot" data-platforms="${app.platforms.join(' ')}" data-cat="${esc(app.category)}">
       <div class="app-card__head">
         ${iconHTML(app)}
-        <div class="app-card__title"><h3>${esc(app.name)}</h3><span class="app-card__cat">${esc(app.category)}</span></div>
+        <div class="app-card__title"><h3>${esc(app.name)}</h3><span class="app-card__cat">${esc(cat(app.category))}</span></div>
       </div>
-      <p>${esc(app.tagline)}</p>
+      <p>${esc(tr(app, 'tagline'))}</p>
       <div class="app-card__meta">
-        ${app.rating ? `<span class="rating"><span class="stars">${stars(app.rating)}</span> ${app.rating.toFixed(1)}</span>` : (app.price ? `<span class="meta">${esc(app.price)}</span>` : '')}
+        ${app.rating ? `<span class="rating"><span class="stars">${stars(app.rating)}</span> ${app.rating.toFixed(1)}</span>` : (app.price ? `<span class="meta">${esc(price(app.price))}</span>` : '')}
         ${app.downloads ? `<span class="meta">${esc(app.downloads)}</span>` : ''}
         <span class="meta">${platformPills(app)}</span>
       </div>
       <div class="badges badges--sm">${badges(app, 'badge--sm')}</div>
     </article>`;
 
-  const render = filter => {
+  const renderGrid = () => {
     if (!grid) return;
     const list = apps.filter(a => {
-      if (filter === 'all') return true;
-      if (filter === 'ios' || filter === 'android') return a.platforms.includes(filter);
-      if (filter.startsWith('cat:')) return a.category === filter.slice(4);
+      if (activeFilter === 'all') return true;
+      if (activeFilter === 'ios' || activeFilter === 'android') return a.platforms.includes(activeFilter);
+      if (activeFilter.startsWith('cat:')) return a.category === activeFilter.slice(4);
       return true;
     });
-    grid.innerHTML = list.length ? list.map(cardHTML).join('') : '<p class="empty">No apps in this category yet.</p>';
-    if (!reduceMotion) $$('.app-card', grid).forEach((c, i) => { c.style.animationDelay = (i * 50) + 'ms'; });
+    grid.innerHTML = list.length ? list.map(cardHTML).join('') : `<p class="empty">${esc(t('apps.empty'))}</p>`;
+    Array.from(grid.children).forEach((c, i) => c.style.setProperty('--i', i));
+    // re-trigger the stagger so filtered cards animate in
+    if (!reduceMotion && grid.classList.contains('in')) {
+      grid.classList.remove('in'); void grid.offsetWidth; grid.classList.add('in');
+    }
   };
-  render('all');
+  const renderApps = () => { renderFeatured(); renderFilters(); renderGrid(); };
 
   filtersEl?.addEventListener('click', e => {
     const btn = e.target.closest('.chip');
     if (!btn) return;
-    $$('.chip', filtersEl).forEach(c => { c.classList.remove('chip--on'); c.setAttribute('aria-selected', 'false'); });
-    btn.classList.add('chip--on'); btn.setAttribute('aria-selected', 'true');
-    render(btn.dataset.filter);
+    activeFilter = btn.dataset.filter;
+    $$('.chip', filtersEl).forEach(c => { const on = c === btn; c.classList.toggle('chip--on', on); c.setAttribute('aria-selected', String(on)); });
+    renderGrid();
   });
 
-  /* ---------- Testimonials ---------- */
-  const tEl = $('#testimonialGrid');
-  const tData = window.ZIMALIFY_TESTIMONIALS || [];
-  if (tEl) {
-    tEl.innerHTML = tData.map(t => `
-      <figure class="testimonial">
-        <div class="testimonial__top"><span class="stars">${stars(t.rating || 5)}</span><span class="testimonial__source">${esc(t.source || '')}</span></div>
-        <blockquote>“${esc(t.quote)}”</blockquote>
-        <figcaption><span class="avatar" aria-hidden="true">${esc(t.author.charAt(0))}</span><div><strong>${esc(t.author)}</strong><span>${esc(t.role || '')}</span></div></figcaption>
-      </figure>`).join('');
-  }
-
-  /* ---------- FAQ: one open at a time ---------- */
+  /* =====================================================
+     FAQ: one open at a time
+     ===================================================== */
   const faqItems = $$('#faqList details');
   faqItems.forEach(d => d.addEventListener('toggle', () => {
     if (d.open) faqItems.forEach(o => { if (o !== d) o.open = false; });
   }));
 
-  /* ---------- Contact form (Formspree via fetch) ---------- */
+  /* =====================================================
+     Contact form (Formspree via fetch, mailto fallback)
+     ===================================================== */
   const form = $('#contactForm');
   const status = $('#formStatus');
   const submitBtn = $('#submitBtn');
@@ -226,27 +344,31 @@
     if (form.action.includes('YOUR_FORM_ID')) {
       // Formspree not configured yet: hand the message to the visitor's email app instead.
       const fd = new FormData(form);
-      const subject = encodeURIComponent(`Project inquiry: ${fd.get('project_type') || 'General'}`);
-      const body = encodeURIComponent(`Name: ${fd.get('name')}\nEmail: ${fd.get('email')}\nBudget: ${fd.get('budget') || 'Not specified'}\n\n${fd.get('message')}`);
+      const subject = encodeURIComponent(`${t('f.subject')}: ${fd.get('project_type') || '-'}`);
+      const body = encodeURIComponent(`${t('f.name')}: ${fd.get('name')}\n${t('f.email')}: ${fd.get('email')}\n${t('f.budget')}: ${fd.get('budget') || '-'}\n\n${fd.get('message')}`);
       window.location.href = `mailto:contact@zimalify.com?subject=${subject}&body=${body}`;
-      status.textContent = 'Opening your email app with the message filled in. If nothing opens, email contact@zimalify.com directly.';
+      status.textContent = t('f.mailto');
       status.classList.add('form__status--ok'); return;
     }
-    submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true; submitBtn.textContent = t('f.sending');
     try {
       const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
       if (res.ok) {
         form.reset();
-        status.textContent = 'Thanks! Your message is on its way. We reply within one business day.';
+        status.textContent = t('f.ok');
         status.classList.add('form__status--ok');
       } else { throw new Error('bad response'); }
     } catch {
-      status.textContent = 'Something went wrong. Please email us directly at contact@zimalify.com.';
+      status.textContent = t('f.err');
       status.classList.add('form__status--err');
-    } finally { submitBtn.disabled = false; submitBtn.textContent = 'Send message'; }
+    } finally { submitBtn.disabled = false; submitBtn.textContent = t('f.submit'); }
   });
 
-  /* ---------- Misc ---------- */
+  /* =====================================================
+     Boot
+     ===================================================== */
   $('#year').textContent = new Date().getFullYear();
   $('#toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+  applyTranslations();
+  renderApps();
 })();
