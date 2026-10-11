@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Pizzeria Da Lino</title>
+  <meta name="description" content="Menu digitale della Pizzeria Da Lino, Milano. Pizze, antipasti, primi, dolci e bevande con prezzi.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F6EFE3">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23C0552B'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23F6EFE3' font-family='Georgia' font-weight='bold'%3EL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="qrpage">
+  <div class="demobar"><div class="wrap"><span>Progetto demo realizzato da <strong>Zimalify</strong></span> <a href="https://zimalify.com/?lang=it" target="_blank" rel="noopener">Scrivici →</a></div></div>
+  <header class="qr__head">
+    <a href="index.html" class="brand"><span class="brand__mark" aria-hidden="true">L</span><span>Pizzeria <em>Da Lino</em></span></a>
+    <p class="muted small">Coperto 2 € · <span class="tag">V</span> veg · <span class="tag">VG</span> vegano · <span class="tag">SG</span> senza glutine</p>
+  </header>
+  <nav class="catbar" id="catBar" aria-label="Categorie"></nav>
+  <main class="qr__main" id="qrMenu"></main>
+  <footer class="qr__foot">
+    <a class="btn btn--wa" href="https://wa.me/393444091624?text=Ciao%20Zimalify%2C%20ho%20visto%20la%20demo%20della%20pizzeria%20e%20vorrei%20un%20sito%20cos%C3%AC%20per%20la%20mia%20attivit%C3%A0." target="_blank" rel="noopener">Prenota su WhatsApp</a>
+    <details class="qr__print">
+      <summary>QR code per i tavoli</summary>
+      <img src="assets/qr-menu.svg" alt="QR code che apre questo menu" width="200" height="200">
+      <p class="small muted">Inquadra per aprire zimalify.com/demo/pizzeria/menu.html</p>
+      <button type="button" class="btn btn--light btn--sm" id="printQr">Stampa</button>
+    </details>
+    <p class="small muted">Attività fittizia. Demo di <a href="https://zimalify.com/?lang=it">Zimalify</a>. <a href="index.html">Torna al sito</a></p>
+  </footer>
+  <script src="js/menu-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

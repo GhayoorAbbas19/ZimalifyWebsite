@@ -54,6 +54,33 @@ python3 -m http.server 8080
 
 **Alternatives:** Netlify/Vercel (drag the folder onto the dashboard, no build command, root as publish directory, then add the domain in their UI), or cPanel/FTP (upload everything to `public_html`).
 
+## Restaurant demo sites (`demo/`)
+
+Two portfolio demos shown in the "Work / Demos" section of the home page. Fictional businesses, Italian copy, each self-contained with its own `index.html`, `menu.html` (phone-friendly QR menu), `css/`, `js/` and `assets/`.
+
+| Demo | URL | Notes |
+|---|---|---|
+| Pizzeria Da Lino | `/demo/pizzeria/` and `/demo/pizzeria/menu.html` | Cream / terracotta / dark green, Playfair Display. Menu data in `js/menu-data.js` |
+| Lahore Grill Milano | `/demo/ristorante-pakistano/` and `/demo/ristorante-pakistano/menu.html` | Deep green / saffron / charcoal, Cormorant Garamond. Italian + English toggle; UI strings in `js/app.js`, dish descriptions in `js/menu-data.js` |
+
+To replace before reuse for a real client: the WhatsApp number (search `wa.me/393444091624`), the pre-filled WhatsApp text, the address and the Google Maps `q=` query in the map iframe, the phone number, the Instagram link, the JSON-LD block in `<head>`, and the photos in `assets/` (regenerate `og.jpg` 1200×630 and the QR with `python3 -c "import segno; segno.make('<menu url>').save('assets/qr-menu.svg', scale=8)"`). Photo credits (Unsplash usernames) are in each footer and in `demo/credits.json`.
+
+## Earlier demo sites (`demos/`)
+
+Two fictional Milan businesses, each a self-contained folder under `demos/`, Italian only, marked "noindex" and labelled as demos:
+
+| Demo | URL | Features |
+|---|---|---|
+| Trattoria Luce (restaurant, Brera) | `/demos/trattoria-luce/` | Tabbed menu with allergen tags, printable QR code to the digital menu, open-now badge, Google Maps embed, booking form that composes a WhatsApp message |
+| Bottega Marelli (stationery shop, Navigli) | `/demos/bottega-marelli/` | Filterable product grid with per-product WhatsApp order links, opening hours with today highlighted and open/closed status, illustrated Instagram-style feed, Google Maps embed |
+
+All WhatsApp links point to the Zimalify number so prospects who try a demo reach you. To reuse a demo for a real client: copy the folder, replace the business data at the top of `app.js`, the address and map query in `index.html`, and regenerate the QR with `python3 -c "import segno; segno.make('<menu url>').save('qr-menu.svg', scale=6)"`.
+
+## Contact channels
+
+- Email: contact@zimalify.com (form falls back to the visitor's mail app until a Formspree ID is set).
+- WhatsApp: +39 344 409 1624, floating button bottom-left plus a row in the contact list. The number lives in `index.html` (two `wa.me` links) and the greeting text in `js/i18n.js` (`wa.msg`).
+
 ## Languages
 
 The home page is bilingual (English / Italian) with a switch in the nav. The language is chosen in this order: `?lang=it` in the URL, the visitor's saved choice, then the browser language, falling back to English. Legal and support pages stay in English.
