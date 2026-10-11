@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20261012">
 </head>
 <body>
   <header class="nav nav--scrolled">
@@ -56,7 +56,7 @@
     </div>
   </footer>
   <script>document.querySelectorAll('.year').forEach(e=>e.textContent=new Date().getFullYear())</script>
-  <script src="js/apps-data.js"></script>
+  <script src="js/apps-data.js?v=20261012"></script>
   <script>
     (function(){const g=document.getElementById('supportGrid');const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     g.innerHTML=(window.ZIMALIFY_APPS||[]).map(a=>{const ic=a.icon||{};const icon=ic.image?`<img class="app-icon" src="${esc(ic.image)}" alt="">`:`<span class="app-icon" style="background:linear-gradient(135deg,${ic.from||'#3B82F6'},${ic.to||'#8B5CF6'})">${ic.glyph||a.name[0]}</span>`;

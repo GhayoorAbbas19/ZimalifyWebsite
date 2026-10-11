@@ -1,8 +1,8 @@
-/* Pizzeria Da Lino — menu data (shared by index.html and menu.html). Prices in euros. */
+/* Pizzeria — menu data (shared by index.html and menu.html). Prices in euros. */
 window.MENU = {
   "Antipasti": [
     ["Bruschette miste", "Pomodoro e basilico, ricotta e miele, crema di olive", 7.5, ["V"]],
-    ["Tagliere Da Lino", "Prosciutto crudo di Parma 24 mesi, salame Milano, provolone, olive taggiasche", 14, []],
+    ["Tagliere della casa", "Prosciutto crudo di Parma 24 mesi, salame Milano, provolone, olive taggiasche", 14, []],
     ["Fiori di zucca fritti", "Ripieni di ricotta e alici, in pastella leggera", 9, []],
     ["Burrata pugliese", "Con pomodorini confit e pesto di basilico", 11, ["V"]]
   ],

@@ -60,8 +60,8 @@ Two portfolio demos shown in the "Work / Demos" section of the home page. Fictio
 
 | Demo | URL | Notes |
 |---|---|---|
-| Pizzeria Da Lino | `/demo/pizzeria/` and `/demo/pizzeria/menu.html` | Cream / terracotta / dark green, Playfair Display. Menu data in `js/menu-data.js` |
-| Lahore Grill Milano | `/demo/ristorante-pakistano/` and `/demo/ristorante-pakistano/menu.html` | Deep green / saffron / charcoal, Cormorant Garamond. Italian + English toggle; UI strings in `js/app.js`, dish descriptions in `js/menu-data.js` |
+| Pizzeria | `/demo/pizzeria/` and `/demo/pizzeria/menu.html` | Cream / terracotta / dark green, Playfair Display. Menu data in `js/menu-data.js` |
+| Grill Milano | `/demo/ristorante-pakistano/` and `/demo/ristorante-pakistano/menu.html` | Deep green / saffron / charcoal, Cormorant Garamond. Italian + English toggle; UI strings in `js/app.js`, dish descriptions in `js/menu-data.js` |
 
 To replace before reuse for a real client: the WhatsApp number (search `wa.me/393444091624`), the pre-filled WhatsApp text, the address and the Google Maps `q=` query in the map iframe, the phone number, the Instagram link, the JSON-LD block in `<head>`, and the photos in `assets/` (regenerate `og.jpg` 1200×630 and the QR with `python3 -c "import segno; segno.make('<menu url>').save('assets/qr-menu.svg', scale=8)"`). Photo credits (Unsplash usernames) are in each footer and in `demo/credits.json`.
 

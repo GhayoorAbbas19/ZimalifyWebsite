@@ -1,4 +1,4 @@
-/* Pizzeria Da Lino — menu rendering, hours, nav */
+/* Pizzeria — menu rendering, hours, nav */
 (function () {
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const eur = n => (Number.isInteger(n) ? n : n.toFixed(2).replace('.', ',')) + ' €';

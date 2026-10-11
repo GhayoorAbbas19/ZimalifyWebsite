@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20261012">
 
   <script type="application/ld+json">
   {
@@ -161,29 +161,52 @@
       <div class="section__head reveal">
         <span class="eyebrow" data-i18n="work.eyebrow">Work / Demos</span>
         <h2 data-i18n="work.title">Websites we build for local businesses</h2>
-        <p data-i18n="work.sub">Two demo sites for fictional Milan restaurants: menu with QR code, photo gallery, opening hours, map and WhatsApp booking. Built fast, loading fast.</p>
+        <p data-i18n="work.sub">Two demo sites for fictional Milan restaurants, built the way we build our apps: fast, clean and ready for WhatsApp bookings. Tap a demo to open it.</p>
       </div>
-      <div class="work stagger reveal">
-        <article class="work__card spot">
-          <a class="work__shot" href="demo/pizzeria/" target="_blank" rel="noopener" aria-label="Pizzeria Da Lino demo">
-            <img src="assets/work/pizzeria.webp" alt="Screenshot of the Pizzeria Da Lino demo website" loading="lazy" width="800" height="600">
-            <span class="work__badge">Demo</span>
+      <div class="showcase reveal">
+        <article class="show spot">
+          <a class="show__visual" href="demo/pizzeria/" target="_blank" rel="noopener" aria-label="Open the Pizzeria demo">
+            <div class="browser">
+              <div class="browser__bar"><i></i><i></i><i></i><span>zimalify.com/demo/pizzeria</span></div>
+              <img src="assets/work/pizzeria.webp" alt="Pizzeria demo, desktop view" loading="lazy" width="800" height="600">
+            </div>
+            <div class="phone phone--mini"><div class="phone__notch"></div><div class="phone__screen phone__screen--img"><img src="assets/work/pizzeria-mobile.webp" alt="" loading="lazy" width="375" height="812"></div></div>
           </a>
-          <div class="work__body">
-            <h3>Pizzeria Da Lino</h3>
+          <div class="show__copy">
+            <span class="show__label">Demo</span>
+            <h3>Pizzeria <small data-i18n="work.t1">Pizzeria tradizionale · Milano</small></h3>
             <p data-i18n="work.p1">Traditional Italian pizzeria: tabbed menu, QR menu page for phones, gallery, hours and WhatsApp booking.</p>
-            <a class="work__link" href="demo/pizzeria/" target="_blank" rel="noopener"><span data-i18n="work.open">Open demo</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <ul class="show__feats">
+              <li data-i18n="work.f.menu">Menu with categories</li>
+              <li data-i18n="work.f.qr">QR menu for phones</li>
+              <li data-i18n="work.f.wa">WhatsApp booking</li>
+              <li data-i18n="work.f.map">Hours &amp; map</li>
+            </ul>
+            <div class="show__meta"><span class="pill pill--web">Web</span><span class="meta" data-i18n="work.stack">HTML · CSS · JS · no build step</span></div>
+            <div class="badges"><a class="badge badge--lg" href="demo/pizzeria/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="2"/></svg><span><small data-i18n="work.openSmall">Live demo</small><span data-i18n="work.open">Open demo</span></span></a></div>
           </div>
         </article>
-        <article class="work__card spot">
-          <a class="work__shot" href="demo/ristorante-pakistano/" target="_blank" rel="noopener" aria-label="Lahore Grill Milano demo">
-            <img src="assets/work/ristorante-pakistano.webp" alt="Screenshot of the Lahore Grill Milano demo website" loading="lazy" width="800" height="600">
-            <span class="work__badge">Demo</span>
+
+        <article class="show spot">
+          <a class="show__visual" href="demo/ristorante-pakistano/" target="_blank" rel="noopener" aria-label="Open the Grill Milano demo">
+            <div class="browser">
+              <div class="browser__bar"><i></i><i></i><i></i><span>zimalify.com/demo/ristorante-pakistano</span></div>
+              <img src="assets/work/ristorante-pakistano.webp" alt="Grill Milano demo, desktop view" loading="lazy" width="800" height="600">
+            </div>
+            <div class="phone phone--mini"><div class="phone__notch"></div><div class="phone__screen phone__screen--img"><img src="assets/work/ristorante-pakistano-mobile.webp" alt="" loading="lazy" width="375" height="812"></div></div>
           </a>
-          <div class="work__body">
-            <h3>Lahore Grill Milano</h3>
+          <div class="show__copy">
+            <span class="show__label">Demo</span>
+            <h3>Grill Milano <small data-i18n="work.t2">Ristorante pakistano Halal · Milano</small></h3>
             <p data-i18n="work.p2">Halal Pakistani restaurant: bilingual Italian and English site, menu by category, QR menu, gallery and WhatsApp booking.</p>
-            <a class="work__link" href="demo/ristorante-pakistano/" target="_blank" rel="noopener"><span data-i18n="work.open">Open demo</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <ul class="show__feats">
+              <li data-i18n="work.f.lang">Italian / English toggle</li>
+              <li data-i18n="work.f.qr">QR menu for phones</li>
+              <li data-i18n="work.f.wa">WhatsApp booking</li>
+              <li data-i18n="work.f.gallery">Photo gallery</li>
+            </ul>
+            <div class="show__meta"><span class="pill pill--web">Web</span><span class="meta" data-i18n="work.stack">HTML · CSS · JS · no build step</span></div>
+            <div class="badges"><a class="badge badge--lg" href="demo/ristorante-pakistano/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="2"/></svg><span><small data-i18n="work.openSmall">Live demo</small><span data-i18n="work.open">Open demo</span></span></a></div>
           </div>
         </article>
       </div>
@@ -476,8 +499,8 @@
   </a>
   <button class="to-top" id="toTop" aria-label="Back to top" data-i18n-aria="totop">↑</button>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/apps-data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/i18n.js?v=20261012"></script>
+  <script src="js/apps-data.js?v=20261012"></script>
+  <script src="js/main.js?v=20261012"></script>
 </body>
 </html>

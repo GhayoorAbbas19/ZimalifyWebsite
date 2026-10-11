@@ -1,4 +1,4 @@
-/* Lahore Grill Milano — menu data. Dish names stay in their original form; descriptions in Italian (it) and English (en). Prices in euros. */
+/* Grill Milano — menu data. Dish names stay in their original form; descriptions in Italian (it) and English (en). Prices in euros. */
 window.MENU = [
   { id: "starters", it: "Starters", en: "Starters", items: [
     ["Samosa (2 pz)", { it: "Sfoglia croccante ripiena di patate e piselli speziati, chutney di tamarindo", en: "Crispy pastry filled with spiced potatoes and peas, tamarind chutney" }, 5, ["V"]],

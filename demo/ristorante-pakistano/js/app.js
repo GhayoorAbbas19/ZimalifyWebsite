@@ -1,22 +1,22 @@
-/* Lahore Grill Milano — bilingual menu, hours, nav */
+/* Grill Milano — bilingual menu, hours, nav */
 (function () {
   const T = {
     it: { skip: "Vai al contenuto", demo: "Progetto demo realizzato da <strong>Zimalify</strong> — Vuoi un sito così?", demoShort: "Progetto demo realizzato da <strong>Zimalify</strong>", demoCta: "Scrivici →", "nav.menu": "Menu", "nav.about": "Chi siamo", "nav.gallery": "Galleria", "nav.where": "Orari e dove", "nav.contact": "Contatti", book: "Prenota su WhatsApp",
       "hero.eyebrow": "Porta Venezia · Milano · tandoor a carbone", "hero.lead": "I sapori del Punjab, cotti come a Lahore: biryani al vapore, karahi nel wok di ferro, kebab dal tandoor a carbone. Tutta la carne è Halal.", "hero.menu": "Vedi il menu",
       "menu.eyebrow": "Il menu", "menu.title": "Dal tandoor e dalla pentola", "about.eyebrow": "Chi siamo", "about.title": "Da Lahore a Porta Venezia",
-      "about.p1": "La famiglia Butt ha aperto il primo Lahore Grill nel 2009 in un locale di quattro tavoli. Le ricette sono quelle di Ammi, la mamma: il garam masala si tosta ogni mattina e il nihari cuoce tutta la notte.",
+      "about.p1": "La famiglia Butt ha aperto il primo Grill Milano nel 2009 in un locale di quattro tavoli. Le ricette sono quelle di Ammi, la mamma: il garam masala si tosta ogni mattina e il nihari cuoce tutta la notte.",
       "about.p2": "Oggi abbiamo 70 coperti, un tandoor a carbone e una sala privata per le feste. Tutta la carne è certificata Halal e la cucina è aperta a tutti, anche a chi mangia piccante zero.",
       "gallery.eyebrow": "Galleria", "gallery.title": "Piatti e sala", "where.eyebrow": "Orari e dove siamo", "where.p": "A 2 minuti dalla fermata Porta Venezia (M1). Aperti tutti i giorni, pranzo e cena. Consegna a domicilio su Glovo e Deliveroo.",
       "contact.eyebrow": "Contatti", "contact.title": "Prenota un tavolo", "contact.p": "Scrivici su WhatsApp con giorno, ora e numero di persone. Per gruppi oltre 10 persone e feste, chiedi della sala privata.",
-      "foot.demo": "Attività fittizia a scopo dimostrativo. Sito realizzato da", "foot.photo": "Foto:", "qr.summary": "QR code per i tavoli", "qr.hint": "Inquadra per aprire zimalify.com/demo/ristorante-pakistano/menu.html", "qr.print": "Stampa", "qr.back": "Torna al sito", title: "Lahore Grill Milano — Cucina pakistana Halal" },
+      "foot.demo": "Attività fittizia a scopo dimostrativo. Sito realizzato da", "foot.photo": "Foto:", "qr.summary": "QR code per i tavoli", "qr.hint": "Inquadra per aprire zimalify.com/demo/ristorante-pakistano/menu.html", "qr.print": "Stampa", "qr.back": "Torna al sito", title: "Grill Milano — Cucina pakistana Halal" },
     en: { skip: "Skip to content", demo: "Demo project by <strong>Zimalify</strong> — Want a site like this?", demoShort: "Demo project by <strong>Zimalify</strong>", demoCta: "Get in touch →", "nav.menu": "Menu", "nav.about": "About", "nav.gallery": "Gallery", "nav.where": "Hours & location", "nav.contact": "Contact", book: "Book on WhatsApp",
       "hero.eyebrow": "Porta Venezia · Milan · charcoal tandoor", "hero.lead": "The flavours of Punjab, cooked the Lahore way: steamed biryani, karahi in the iron wok, kebabs from the charcoal tandoor. All meat is Halal.", "hero.menu": "See the menu",
       "menu.eyebrow": "The menu", "menu.title": "From the tandoor and the pot", "about.eyebrow": "About us", "about.title": "From Lahore to Porta Venezia",
-      "about.p1": "The Butt family opened the first Lahore Grill in 2009 in a four-table room. The recipes are Ammi's, our mother's: garam masala is toasted every morning and the nihari cooks all night.",
+      "about.p1": "The Butt family opened the first Grill Milano in 2009 in a four-table room. The recipes are Ammi's, our mother's: garam masala is toasted every morning and the nihari cooks all night.",
       "about.p2": "Today we have 70 seats, a charcoal tandoor and a private room for parties. All meat is certified Halal and the kitchen welcomes everyone, including those who want zero spice.",
       "gallery.eyebrow": "Gallery", "gallery.title": "Dishes and dining room", "where.eyebrow": "Hours and location", "where.p": "2 minutes from Porta Venezia metro (M1). Open every day for lunch and dinner. Delivery via Glovo and Deliveroo.",
       "contact.eyebrow": "Contact", "contact.title": "Book a table", "contact.p": "Message us on WhatsApp with the day, time and number of guests. For groups over 10 and parties, ask about the private room.",
-      "foot.demo": "Fictional business for demonstration. Website by", "foot.photo": "Photos:", "qr.summary": "QR code for tables", "qr.hint": "Scan to open zimalify.com/demo/ristorante-pakistano/menu.html", "qr.print": "Print", "qr.back": "Back to the site", title: "Lahore Grill Milano — Halal Pakistani cuisine" }
+      "foot.demo": "Fictional business for demonstration. Website by", "foot.photo": "Photos:", "qr.summary": "QR code for tables", "qr.hint": "Scan to open zimalify.com/demo/ristorante-pakistano/menu.html", "qr.print": "Print", "qr.back": "Back to the site", title: "Grill Milano — Halal Pakistani cuisine" }
   };
   let lang = (() => { const q = new URLSearchParams(location.search).get('lang'); if (q && T[q]) return q; try { const s = localStorage.getItem('lg-lang'); if (s && T[s]) return s; } catch (_) {} return 'it'; })();
   const t = k => T[lang][k] ?? T.it[k] ?? k;
