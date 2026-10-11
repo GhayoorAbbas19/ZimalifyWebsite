@@ -97,6 +97,12 @@ window.ZIMALIFY_I18N = {
     "foot.appsCol": "Apps", "foot.rights": "All rights reserved.",
     "foot.tm": "Apple, the Apple logo and App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC.",
     "totop": "Back to top",
+    "nav.work": "Work",
+    "work.eyebrow": "Work / Demos", "work.title": "Websites we build for local businesses",
+    "work.sub": "Two demo sites for fictional Milan restaurants: menu with QR code, photo gallery, opening hours, map and WhatsApp booking. Built fast, loading fast.",
+    "work.p1": "Traditional Italian pizzeria: tabbed menu, QR menu page for phones, gallery, hours and WhatsApp booking.",
+    "work.p2": "Halal Pakistani restaurant: bilingual Italian and English site, menu by category, QR menu, gallery and WhatsApp booking.",
+    "work.open": "Open demo",
     "wa.label": "Chat on WhatsApp",
     "wa.msg": "Hi Zimalify, I'm interested in building an app. Can we talk?"
   },
@@ -187,6 +193,12 @@ window.ZIMALIFY_I18N = {
     "foot.appsCol": "App", "foot.rights": "Tutti i diritti riservati.",
     "foot.tm": "Apple, il logo Apple e App Store sono marchi di Apple Inc. Google Play è un marchio di Google LLC.",
     "totop": "Torna su",
+    "nav.work": "Lavori",
+    "work.eyebrow": "Lavori / Demo", "work.title": "Siti web che realizziamo per le attività locali",
+    "work.sub": "Due siti demo per ristoranti milanesi immaginari: menu con QR code, galleria fotografica, orari, mappa e prenotazione su WhatsApp. Realizzati in fretta, veloci da caricare.",
+    "work.p1": "Pizzeria tradizionale: menu a schede, pagina menu QR per smartphone, galleria, orari e prenotazione su WhatsApp.",
+    "work.p2": "Ristorante pakistano Halal: sito bilingue italiano e inglese, menu per categorie, menu QR, galleria e prenotazione su WhatsApp.",
+    "work.open": "Apri la demo",
     "wa.label": "Scrivici su WhatsApp",
     "wa.msg": "Ciao Zimalify, vorrei realizzare un'app. Possiamo parlarne?"
   }

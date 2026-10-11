@@ -1,0 +1,90 @@
+{
+ "demo/pizzeria/assets": [
+  {
+   "file": "hero.webp",
+   "by": "fabrizio_photopf",
+   "url": "https://unsplash.com/@fabrizio_photopf",
+   "photo": "https://unsplash.com/photos/1622880833523-7cf1c0bd4296"
+  },
+  {
+   "file": "margherita.webp",
+   "by": "aurel__lens",
+   "url": "https://unsplash.com/@aurel__lens",
+   "photo": "https://unsplash.com/photos/1574071318508-1cdbab80d002"
+  },
+  {
+   "file": "pizza-rucola.webp",
+   "by": "amir_v_ali",
+   "url": "https://unsplash.com/@amir_v_ali",
+   "photo": "https://unsplash.com/photos/1598023696416-0193a0bcd302"
+  },
+  {
+   "file": "impasto.webp",
+   "by": "artek123",
+   "url": "https://unsplash.com/@artek123",
+   "photo": "https://unsplash.com/photos/1537734796389-e1fc293cf856"
+  },
+  {
+   "file": "sala.webp",
+   "by": "ninjason",
+   "url": "https://unsplash.com/@ninjason",
+   "photo": "https://unsplash.com/photos/1517248135467-4c7edcad34c4"
+  },
+  {
+   "file": "tiramisu.webp",
+   "by": "marianna_ole",
+   "url": "https://unsplash.com/@marianna_ole",
+   "photo": "https://unsplash.com/photos/1571877227200-a0d98ea607e9"
+  },
+  {
+   "file": "pizza-tagliere.webp",
+   "by": "kajareichardtphotos",
+   "url": "https://unsplash.com/@kajareichardtphotos",
+   "photo": "https://unsplash.com/photos/1608562099373-69dd6b715cd9"
+  }
+ ],
+ "demo/ristorante-pakistano/assets": [
+  {
+   "file": "hero.webp",
+   "by": "shreyaksingh",
+   "url": "https://unsplash.com/@shreyaksingh",
+   "photo": "https://unsplash.com/photos/1589302168068-964664d93dc0"
+  },
+  {
+   "file": "grill.webp",
+   "by": "roshaan",
+   "url": "https://unsplash.com/@roshaan",
+   "photo": "https://unsplash.com/photos/1599487488170-d11ec9c172f0"
+  },
+  {
+   "file": "kebab.webp",
+   "by": "zayed_ahmed_zadu",
+   "url": "https://unsplash.com/@zayed_ahmed_zadu",
+   "photo": "https://unsplash.com/photos/1781332143834-19a40f746cd9"
+  },
+  {
+   "file": "karahi.webp",
+   "by": "rimshaj123",
+   "url": "https://unsplash.com/@rimshaj123",
+   "photo": "https://unsplash.com/photos/1708782344490-9026aaa5eec7"
+  },
+  {
+   "file": "naan.webp",
+   "by": "sweetyogajustine",
+   "url": "https://unsplash.com/@sweetyogajustine",
+   "photo": "https://unsplash.com/photos/1640625314547-aee9a7696589"
+  },
+  {
+   "file": "sala.webp",
+   "by": "zoshuacolah",
+   "url": "https://unsplash.com/@zoshuacolah",
+   "photo": "https://unsplash.com/photos/1751200503125-d8cb239f95ba"
+  },
+  {
+   "file": "biryani.webp",
+   "by": "chefmariii",
+   "url": "https://unsplash.com/@chefmariii",
+   "photo": "https://unsplash.com/photos/1631515243349-e0cb75fb8d3a"
+  }
+ ]
+}
