@@ -345,6 +345,13 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .footer__bottom span:last-child { flex: 1 1 320px; text-align: right; }
 @media (max-width: 640px) { .footer__bottom span:last-child { text-align: left; } }
 
+.wa { position: fixed; left: 20px; bottom: 20px; z-index: 90; display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px 12px 14px; border-radius: 999px; background: #25D366; color: #fff; font-weight: 600; font-size: 0.95rem; box-shadow: 0 10px 30px rgba(37,211,102,0.4); transition: transform 0.25s, box-shadow 0.25s; animation: waPop 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 1.2s both; }
+.wa:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(37,211,102,0.55); }
+.wa::before { content: ''; position: absolute; inset: -4px; border-radius: inherit; border: 2px solid #25D366; opacity: 0; animation: waRing 2.6s ease-out 2s infinite; }
+@keyframes waPop { from { opacity: 0; transform: translateY(20px) scale(0.8); } to { opacity: 1; transform: none; } }
+@keyframes waRing { 0% { opacity: 0.7; transform: scale(1); } 100% { opacity: 0; transform: scale(1.35); } }
+@media (max-width: 640px) { .wa { padding: 14px; } .wa__text { display: none; } }
+@media (prefers-reduced-motion: reduce) { .wa { animation: none; } .wa::before { display: none; } }
 .to-top { position: fixed; right: 20px; bottom: 20px; width: 46px; height: 46px; border-radius: 50%; background: var(--grad); color: #fff; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(99,102,241,0.4); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.3s, transform 0.3s; z-index: 90; }
 .to-top--show { opacity: 1; transform: none; pointer-events: auto; }
 

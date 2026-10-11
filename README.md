@@ -54,6 +54,22 @@ python3 -m http.server 8080
 
 **Alternatives:** Netlify/Vercel (drag the folder onto the dashboard, no build command, root as publish directory, then add the domain in their UI), or cPanel/FTP (upload everything to `public_html`).
 
+## Demo sites (portfolio for local-business web work)
+
+Two fictional Milan businesses, each a self-contained folder under `demos/`, Italian only, marked "noindex" and labelled as demos:
+
+| Demo | URL | Features |
+|---|---|---|
+| Trattoria Luce (restaurant, Brera) | `/demos/trattoria-luce/` | Tabbed menu with allergen tags, printable QR code to the digital menu, open-now badge, Google Maps embed, booking form that composes a WhatsApp message |
+| Bottega Marelli (stationery shop, Navigli) | `/demos/bottega-marelli/` | Filterable product grid with per-product WhatsApp order links, opening hours with today highlighted and open/closed status, illustrated Instagram-style feed, Google Maps embed |
+
+All WhatsApp links point to the Zimalify number so prospects who try a demo reach you. To reuse a demo for a real client: copy the folder, replace the business data at the top of `app.js`, the address and map query in `index.html`, and regenerate the QR with `python3 -c "import segno; segno.make('<menu url>').save('qr-menu.svg', scale=6)"`.
+
+## Contact channels
+
+- Email: contact@zimalify.com (form falls back to the visitor's mail app until a Formspree ID is set).
+- WhatsApp: +39 344 409 1624, floating button bottom-left plus a row in the contact list. The number lives in `index.html` (two `wa.me` links) and the greeting text in `js/i18n.js` (`wa.msg`).
+
 ## Languages
 
 The home page is bilingual (English / Italian) with a switch in the nav. The language is chosen in this order: `?lang=it` in the URL, the visitor's saved choice, then the browser language, falling back to English. Legal and support pages stay in English.

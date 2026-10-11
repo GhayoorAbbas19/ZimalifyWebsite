@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottega Marelli — Cartoleria e regali ai Navigli</title>
+  <meta name="description" content="Bottega Marelli: cartoleria, carta fatta a mano, penne e regali scelti con cura. Ai Navigli, Milano. Ordina su WhatsApp e ritira in negozio.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237FA68A'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="demo-badge" href="https://zimalify.com" target="_blank" rel="noopener">Sito demo di <strong>Zimalify</strong> · vuoi il tuo?</a>
+
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a href="#top" class="brand"><span class="brand__mark">B</span>Bottega Marelli</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#prodotti">Prodotti</a>
+        <a href="#orari">Orari</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#dove">Dove siamo</a>
+        <a href="https://wa.me/393444091624?text=Ciao%20Bottega%20Marelli%2C%20vorrei%20informazioni" target="_blank" rel="noopener" class="btn btn--dark">Scrivici</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero__in">
+        <div>
+          <p class="eyebrow">Navigli · Milano</p>
+          <h1>Carta, penne e piccoli regali <em>scelti uno a uno.</em></h1>
+          <p class="lead">Una bottega di quartiere dal 1998: quaderni rilegati a mano, penne stilografiche, biglietti stampati a Milano e oggetti che fanno piacere regalare. Ordini su WhatsApp, ritiro in negozio in giornata.</p>
+          <div class="hero__cta">
+            <a href="#prodotti" class="btn btn--primary">Guarda i prodotti</a>
+            <a href="#orari" class="btn btn--ghost"><span class="dot" id="openDot"></span><span id="openText">Orari</span></a>
+          </div>
+        </div>
+        <div class="hero__stack" aria-hidden="true">
+          <div class="card card--1"><span>📓</span></div>
+          <div class="card card--2"><span>🖋️</span></div>
+          <div class="card card--3"><span>🎁</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prodotti">
+      <div class="wrap">
+        <div class="head">
+          <div><p class="eyebrow">Prodotti</p><h2>In negozio questa settimana</h2></div>
+          <div class="filters" id="filters"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <p class="note">Prezzi IVA inclusa. Per ordinare: tocca <strong>Chiedi su WhatsApp</strong>, ti confermiamo disponibilità e prepariamo il pacchetto per il ritiro.</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="orari">
+      <div class="wrap two">
+        <div>
+          <p class="eyebrow">Orari</p>
+          <h2 id="hoursTitle">Siamo aperti</h2>
+          <p id="hoursSub" class="muted"></p>
+          <table class="hours" id="hoursTable"></table>
+        </div>
+        <div class="info">
+          <div class="info__row"><span>📍</span><div><strong>Via Vigevano 8</strong><br>20144 Milano, Navigli<br><a href="https://maps.google.com/?q=Via+Vigevano+8+Milano" target="_blank" rel="noopener">Indicazioni</a></div></div>
+          <div class="info__row"><span>💬</span><div><strong>WhatsApp</strong><br>Risposta in giornata<br><a href="https://wa.me/393444091624?text=Ciao%20Bottega%20Marelli%2C%20vorrei%20informazioni" target="_blank" rel="noopener">+39 344 409 1624</a></div></div>
+          <div class="info__row"><span>🚇</span><div><strong>Come arrivare</strong><br>Porta Genova (M2), 3 minuti a piedi<br>Tram 9 e 10</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="instagram">
+      <div class="wrap">
+        <div class="head">
+          <div><p class="eyebrow">Instagram</p><h2>@bottegamarelli</h2></div>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="btn btn--ghost">Seguici</a>
+        </div>
+        <div class="insta" id="insta"></div>
+        <p class="note">Il feed si aggiorna da solo con gli ultimi post del profilo. In questa demo le foto sono illustrazioni.</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="dove">
+      <div class="wrap">
+        <p class="eyebrow">Dove siamo</p>
+        <h2>Ai Navigli, a due passi dalla Darsena</h2>
+        <div class="map"><iframe title="Mappa: Via Vigevano 8, Milano" src="https://www.google.com/maps?q=Via+Vigevano+8,+20144+Milano&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <div><strong>Bottega Marelli</strong> · Via Vigevano 8, 20144 Milano · P.IVA 00000000000</div>
+      <div class="footer__demo">Attività fittizia. Sito dimostrativo realizzato da <a href="https://zimalify.com" target="_blank" rel="noopener">Zimalify</a>.</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/393444091624?text=Ciao%20Bottega%20Marelli%2C%20vorrei%20informazioni" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.2l-.5-.3z"/></svg></a>
+
+  <script src="app.js"></script>
+</body>
+</html>

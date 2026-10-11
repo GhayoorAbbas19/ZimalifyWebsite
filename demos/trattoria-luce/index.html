@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trattoria Luce — Cucina milanese in Brera</title>
+  <meta name="description" content="Trattoria Luce, cucina milanese di stagione nel cuore di Brera. Menù digitale, prenotazione su WhatsApp, aperti a pranzo e cena.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FBF6EE">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23C4572E'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23FBF6EE' font-family='Georgia'%3EL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="demo-badge" href="https://zimalify.com" target="_blank" rel="noopener">Sito demo di <strong>Zimalify</strong> · vuoi il tuo?</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__in">
+      <a href="#top" class="brand"><span class="brand__mark">L</span><span>Trattoria <em>Luce</em></span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#storia">La trattoria</a>
+        <a href="#menu">Menù</a>
+        <a href="#dove">Dove siamo</a>
+        <a href="#prenota" class="btn btn--primary">Prenota</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__art" aria-hidden="true">
+        <svg viewBox="0 0 600 600" class="plate"><defs><radialGradient id="pg" cx="50%" cy="45%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#EEE4D4"/></radialGradient></defs><circle cx="300" cy="300" r="270" fill="url(#pg)" stroke="#E2D5C0" stroke-width="6"/><circle cx="300" cy="300" r="215" fill="none" stroke="#E8DCC8" stroke-width="2"/><ellipse cx="300" cy="300" rx="150" ry="140" fill="#E8B84A"/><ellipse cx="300" cy="290" rx="132" ry="118" fill="#F2C85B"/><circle cx="250" cy="270" r="22" fill="#C4572E"/><circle cx="330" cy="330" r="26" fill="#C4572E"/><circle cx="300" cy="245" r="16" fill="#6B7A3E"/><circle cx="360" cy="275" r="14" fill="#6B7A3E"/><circle cx="260" cy="340" r="12" fill="#6B7A3E"/><path d="M200 250c40-40 160-40 200 0" stroke="#D9A33B" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M215 330c40 40 130 40 170 0" stroke="#D9A33B" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="wrap hero__in">
+        <p class="eyebrow">Brera · Milano · dal 1987</p>
+        <h1>Cucina milanese di stagione, <em>fatta con calma.</em></h1>
+        <p class="lead">Risotto allo zafferano mantecato al momento, cotoletta alta come si deve, dolci della casa. Trenta coperti, una cantina piccola e scelta bene.</p>
+        <div class="hero__cta">
+          <a href="#prenota" class="btn btn--primary">Prenota su WhatsApp</a>
+          <a href="#menu" class="btn btn--ghost">Vedi il menù</a>
+        </div>
+        <ul class="hero__facts">
+          <li><strong id="openNow">Aperto ora</strong><span>12:30–14:30 · 19:30–23:00</span></li>
+          <li><strong>Via Fiori Chiari 12</strong><span>a due passi dalla Pinacoteca</span></li>
+          <li><strong>4,8 ★</strong><span>oltre 600 recensioni</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="storia">
+      <div class="wrap two">
+        <div>
+          <p class="eyebrow">La trattoria</p>
+          <h2>Una famiglia, una cucina, un quartiere.</h2>
+          <p>Trattoria Luce nasce nel 1987 da Nonna Luce e dal suo risotto. Oggi in cucina c'è Marco, suo nipote, con la stessa ricetta e lo stesso riso Carnaroli della Lomellina.</p>
+          <p>Cambiamo il menù ogni stagione, compriamo dagli stessi produttori da vent'anni e cuciniamo tutto a mano, dai ravioli alla crema al mascarpone.</p>
+        </div>
+        <div class="values">
+          <div class="value"><span class="value__ico">🌾</span><strong>Prodotti del territorio</strong><span>Riso, carni e formaggi lombardi</span></div>
+          <div class="value"><span class="value__ico">🍷</span><strong>Cantina selezionata</strong><span>40 etichette, metà naturali</span></div>
+          <div class="value"><span class="value__ico">🌿</span><strong>Opzioni veg e senza glutine</strong><span>Segnalate nel menù</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream" id="menu">
+      <div class="wrap">
+        <div class="menu__head">
+          <div>
+            <p class="eyebrow">Il menù</p>
+            <h2>Cosa si mangia oggi</h2>
+            <p class="muted">Coperto 3 €. Chiedete delle proposte del giorno. <span class="tag">V</span> vegetariano · <span class="tag">SG</span> senza glutine</p>
+          </div>
+          <div class="qr">
+            <img src="qr-menu.svg" alt="QR code del menù digitale" width="120" height="120">
+            <div><strong>Menù digitale</strong><span>Inquadra il QR dal tavolo: sempre aggiornato, niente carta.</span><a href="#menu" id="qrPrint">Stampa il QR per i tavoli</a></div>
+          </div>
+        </div>
+        <div class="tabs" id="menuTabs" role="tablist"></div>
+        <div class="menu" id="menuList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="dove">
+      <div class="wrap two two--map">
+        <div>
+          <p class="eyebrow">Dove siamo</p>
+          <h2>Via Fiori Chiari 12, Brera</h2>
+          <p>A 4 minuti a piedi dalla fermata Lanza (M2) e a 6 da Montenapoleone (M3). Parcheggio in Via Pontaccio.</p>
+          <table class="hours">
+            <tr><th>Lunedì</th><td>Chiuso</td></tr>
+            <tr><th>Martedì – Venerdì</th><td>12:30–14:30 · 19:30–23:00</td></tr>
+            <tr><th>Sabato</th><td>12:30–15:00 · 19:30–23:30</td></tr>
+            <tr><th>Domenica</th><td>12:30–15:00</td></tr>
+          </table>
+          <div class="contacts">
+            <a href="tel:+390200000000">02 0000 0000</a>
+            <a href="https://wa.me/393444091624?text=Buongiorno%2C%20vorrei%20informazioni%20sulla%20Trattoria%20Luce" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://maps.google.com/?q=Via+Fiori+Chiari+12+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          </div>
+        </div>
+        <div class="map">
+          <iframe title="Mappa: Via Fiori Chiari 12, Milano" src="https://www.google.com/maps?q=Via+Fiori+Chiari+12,+20121+Milano&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="prenota">
+      <div class="wrap two">
+        <div>
+          <p class="eyebrow eyebrow--light">Prenota</p>
+          <h2>Un tavolo in 30 secondi, su WhatsApp.</h2>
+          <p>Compila i dati: si apre WhatsApp con il messaggio già scritto. Confermiamo entro pochi minuti negli orari di apertura. Per gruppi oltre 8 persone chiamateci.</p>
+        </div>
+        <form class="book" id="bookForm">
+          <label><span>Nome</span><input type="text" name="nome" required placeholder="Giulia Rossi"></label>
+          <div class="row">
+            <label><span>Data</span><input type="date" name="data" required></label>
+            <label><span>Ora</span><select name="ora" required><option value="" disabled selected>Scegli</option><option>12:30</option><option>13:00</option><option>13:30</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option></select></label>
+            <label><span>Persone</span><select name="persone" required><option>1</option><option>2</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+          </div>
+          <label><span>Note (allergie, seggiolone, compleanno…)</span><input type="text" name="note" placeholder="Facoltativo"></label>
+          <button type="submit" class="btn btn--wa"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.2l-.5-.3z"/></svg> Prenota su WhatsApp</button>
+          <p class="book__note">Nessuna carta di credito richiesta. Disdetta gratuita fino a 2 ore prima.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <div><strong>Trattoria Luce</strong><br>Via Fiori Chiari 12, 20121 Milano<br>P.IVA 00000000000</div>
+      <div><a href="#menu">Menù</a> · <a href="#dove">Orari</a> · <a href="#prenota">Prenota</a> · <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></div>
+      <div class="footer__demo">Attività fittizia. Sito dimostrativo realizzato da <a href="https://zimalify.com" target="_blank" rel="noopener">Zimalify</a>.</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/393444091624?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo%20alla%20Trattoria%20Luce" target="_blank" rel="noopener" aria-label="Prenota su WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.2l-.5-.3z"/></svg></a>
+
+  <script src="app.js"></script>
+</body>
+</html>

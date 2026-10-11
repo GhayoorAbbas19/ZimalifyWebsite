@@ -96,7 +96,9 @@ window.ZIMALIFY_I18N = {
     "foot.support": "Support", "foot.appsupport": "App support", "foot.privacy": "Privacy policy", "foot.terms": "Terms of use",
     "foot.appsCol": "Apps", "foot.rights": "All rights reserved.",
     "foot.tm": "Apple, the Apple logo and App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC.",
-    "totop": "Back to top"
+    "totop": "Back to top",
+    "wa.label": "Chat on WhatsApp",
+    "wa.msg": "Hi Zimalify, I'm interested in building an app. Can we talk?"
   },
 
   it: {
@@ -184,6 +186,8 @@ window.ZIMALIFY_I18N = {
     "foot.support": "Supporto", "foot.appsupport": "Supporto app", "foot.privacy": "Informativa privacy", "foot.terms": "Termini d'uso",
     "foot.appsCol": "App", "foot.rights": "Tutti i diritti riservati.",
     "foot.tm": "Apple, il logo Apple e App Store sono marchi di Apple Inc. Google Play è un marchio di Google LLC.",
-    "totop": "Torna su"
+    "totop": "Torna su",
+    "wa.label": "Scrivici su WhatsApp",
+    "wa.msg": "Ciao Zimalify, vorrei realizzare un'app. Possiamo parlarne?"
   }
 };

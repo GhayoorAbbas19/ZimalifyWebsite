@@ -35,6 +35,9 @@
     $$('[data-i18n-placeholder]').forEach(el => el.placeholder = t(el.dataset.i18nPlaceholder));
     $$('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
     $$('#langSwitch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    // WhatsApp links carry a pre-filled greeting in the current language
+    const waHref = 'https://wa.me/393444091624?text=' + encodeURIComponent(t('wa.msg'));
+    $$('#waButton, #waContactLink').forEach(a => a.href = waHref);
     splitHeroWords();
   };
 
