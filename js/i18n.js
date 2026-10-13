@@ -18,18 +18,18 @@ window.ZIMALIFY_I18N = {
     "nav.apps": "Apps", "nav.services": "Services", "nav.process": "Process", "nav.faq": "FAQ", "nav.about": "About", "nav.cta": "Start a project",
     "nav.menuOpen": "Open menu", "nav.menuClose": "Close menu", "nav.lang": "Change language",
 
-    "hero.eyebrow": "Five apps live on the App Store",
+    "hero.eyebrow": "Six apps live on the App Store and Google Play",
     "hero.title": "We build mobile apps <span class=\"grad-text\">people love to keep.</span>",
-    "hero.lead": "Zimalify is a mobile app studio with five native iOS apps live on the App Store, spanning utilities, health and finance. We also design, build and launch apps for clients who want the same care put into theirs.",
+    "hero.lead": "Zimalify is a mobile app studio with six native apps live on the App Store and Google Play, spanning utilities, health, finance and daily habits. We also design, build and launch apps for clients who want the same care put into theirs.",
     "hero.cta1": "Explore our apps", "hero.cta2": "Work with us",
-    "hero.stat1": "apps live", "hero.stat2": "categories", "hero.stat3": "native Swift", "hero.stat4": "reply time",
+    "hero.stat1": "apps live", "hero.stat2": "categories", "hero.stat3": "native code", "hero.stat4": "reply time",
 
     "apps.eyebrow": "Our apps", "apps.title": "Shipped, live and loved",
     "apps.sub": "Every app below is live today. Tap a badge to open it in the store.",
     "apps.featured": "Featured app", "apps.all": "All apps", "apps.empty": "No apps in this category yet.",
     "apps.downloads": "downloads", "apps.price.Free": "Free",
     "badge.apple": "Download on the", "badge.google": "Get it on",
-    "cat.Utilities": "Utilities", "cat.Finance": "Finance", "cat.Health & Fitness": "Health & Fitness", "cat.Productivity": "Productivity",
+    "cat.Utilities": "Utilities", "cat.Finance": "Finance", "cat.Health & Fitness": "Health & Fitness", "cat.Productivity": "Productivity", "cat.Books & Reference": "Books & Reference",
 
     "services.eyebrow": "Services", "services.title": "What we can build for you",
     "services.sub": "The same team and the same standards behind our own apps, applied to yours.",
@@ -91,7 +91,7 @@ window.ZIMALIFY_I18N = {
     "f.mailto": "Opening your email app with the message filled in. If nothing opens, email contact@zimalify.com directly.",
     "f.subject": "Project inquiry",
 
-    "foot.tagline": "Mobile apps people love to keep. Live on the App Store.",
+    "foot.tagline": "Mobile apps people love to keep. Live on the App Store and Google Play.",
     "foot.company": "Company", "foot.apps": "Our apps", "foot.services": "Services", "foot.process": "Process", "foot.about": "About", "foot.contact": "Contact",
     "foot.support": "Support", "foot.appsupport": "App support", "foot.privacy": "Privacy policy", "foot.terms": "Terms of use",
     "foot.appsCol": "Apps", "foot.rights": "All rights reserved.",
@@ -117,18 +117,18 @@ window.ZIMALIFY_I18N = {
     "nav.apps": "App", "nav.services": "Servizi", "nav.process": "Processo", "nav.faq": "FAQ", "nav.about": "Chi siamo", "nav.cta": "Inizia un progetto",
     "nav.menuOpen": "Apri il menu", "nav.menuClose": "Chiudi il menu", "nav.lang": "Cambia lingua",
 
-    "hero.eyebrow": "Cinque app disponibili sull'App Store",
+    "hero.eyebrow": "Sei app disponibili su App Store e Google Play",
     "hero.title": "Creiamo app mobile <span class=\"grad-text\">che le persone amano tenere.</span>",
-    "hero.lead": "Zimalify è uno studio di app mobile con cinque app native per iOS disponibili sull'App Store, tra utility, salute e finanza. Progettiamo, sviluppiamo e lanciamo app anche per i clienti che vogliono la stessa cura per la loro.",
+    "hero.lead": "Zimalify è uno studio di app mobile con sei app native disponibili su App Store e Google Play, tra utility, salute, finanza e abitudini quotidiane. Progettiamo, sviluppiamo e lanciamo app anche per i clienti che vogliono la stessa cura per la loro.",
     "hero.cta1": "Scopri le nostre app", "hero.cta2": "Lavora con noi",
-    "hero.stat1": "app pubblicate", "hero.stat2": "categorie", "hero.stat3": "Swift nativo", "hero.stat4": "tempo di risposta",
+    "hero.stat1": "app pubblicate", "hero.stat2": "categorie", "hero.stat3": "codice nativo", "hero.stat4": "tempo di risposta",
 
     "apps.eyebrow": "Le nostre app", "apps.title": "Pubblicate, attive e apprezzate",
     "apps.sub": "Ogni app qui sotto è disponibile oggi. Tocca un badge per aprirla nello store.",
     "apps.featured": "App in evidenza", "apps.all": "Tutte le app", "apps.empty": "Nessuna app in questa categoria per ora.",
     "apps.downloads": "download", "apps.price.Free": "Gratis",
     "badge.apple": "Scarica su", "badge.google": "Disponibile su",
-    "cat.Utilities": "Utility", "cat.Finance": "Finanza", "cat.Health & Fitness": "Salute e fitness", "cat.Productivity": "Produttività",
+    "cat.Utilities": "Utility", "cat.Finance": "Finanza", "cat.Health & Fitness": "Salute e fitness", "cat.Productivity": "Produttività", "cat.Books & Reference": "Libri e consultazione",
 
     "services.eyebrow": "Servizi", "services.title": "Cosa possiamo costruire per te",
     "services.sub": "Lo stesso team e gli stessi standard delle nostre app, applicati alla tua.",
@@ -190,7 +190,7 @@ window.ZIMALIFY_I18N = {
     "f.mailto": "Stiamo aprendo la tua app di posta con il messaggio precompilato. Se non si apre, scrivi a contact@zimalify.com.",
     "f.subject": "Richiesta progetto",
 
-    "foot.tagline": "App mobile che le persone amano tenere. Disponibili sull'App Store.",
+    "foot.tagline": "App mobile che le persone amano tenere. Disponibili su App Store e Google Play.",
     "foot.company": "Azienda", "foot.apps": "Le nostre app", "foot.services": "Servizi", "foot.process": "Processo", "foot.about": "Chi siamo", "foot.contact": "Contatti",
     "foot.support": "Supporto", "foot.appsupport": "Supporto app", "foot.privacy": "Informativa privacy", "foot.terms": "Termini d'uso",
     "foot.appsCol": "App", "foot.rights": "Tutti i diritti riservati.",

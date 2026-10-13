@@ -24,7 +24,7 @@ python3 -m http.server 8080
 
 ## To-do before going live
 
-1. **Apps:** five real apps are in `js/apps-data.js` (CleanerZX, Finovo, MealBurn, PulseState, SipTrack), all iOS-only. When an Android version ships, add its `playStore` URL and `"android"` to `platforms`. To add a new app, copy an entry and drop its icon and screenshots into `assets/apps/<slug>/`.
+1. **Apps:** six real apps are in `js/apps-data.js` (CleanerZX, Finovo, MealBurn, PulseState, SipTrack on iOS; Nobel Quran on Android). When an Android version ships, add its `playStore` URL and `"android"` to `platforms`. When an app's store screenshots change, re-download them into `assets/apps/<slug>/` and bump the `?v=` suffix on those paths in `js/apps-data.js` so browsers refresh them. To add a new app, copy an entry and drop its icon and screenshots into `assets/apps/<slug>/`.
 2. **Contact form:** create a free form at https://formspree.io, then replace `YOUR_FORM_ID` in `index.html` with your form ID.
 3. **Emails:** all contact and support links point to `contact@zimalify.com`.
 4. **Domain:** zimalify.com is set in `CNAME`, the canonical URL, `robots.txt` and `sitemap.xml`.
