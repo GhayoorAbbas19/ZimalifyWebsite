@@ -71,7 +71,7 @@ window.ZIMALIFY_I18N = {
     "v3.t": "Own your work", "v3.s": "Your accounts, your code, your data. Always.",
     "about.role1": "Founder",
     "about.quote1": "\"Every app we ship starts with one question: would we keep it on our own phones? That standard shapes the products we build and the client work we take on.\"",
-    "about.role2": "Co-Founder & Lead Developer",
+    "about.role2": "Co-Founder & CEO",
     "about.quote2": "\"I have shipped apps on both stores for years, handled the rejections, the one-star reviews and the 2 a.m. crash reports. That is exactly why client work at Zimalify is calm, honest and predictable.\"",
     "about.email": "Email",
 
@@ -170,7 +170,7 @@ window.ZIMALIFY_I18N = {
     "v3.t": "Il lavoro è tuo", "v3.s": "I tuoi account, il tuo codice, i tuoi dati. Sempre.",
     "about.role1": "Fondatore",
     "about.quote1": "\"Ogni app che pubblichiamo parte da una domanda: la terremmo sul nostro telefono? Quello standard guida i prodotti che costruiamo e i progetti che accettiamo.\"",
-    "about.role2": "Co-fondatore e Lead Developer",
+    "about.role2": "Co-fondatore e CEO",
     "about.quote2": "\"Pubblico app su entrambi gli store da anni: ho gestito i rifiuti, le recensioni a una stella e i report di crash alle 2 di notte. È proprio per questo che lavorare con Zimalify è sereno, onesto e prevedibile.\"",
     "about.email": "Email",
 
