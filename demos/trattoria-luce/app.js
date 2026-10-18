@@ -57,7 +57,7 @@
     const f = new FormData(e.target);
     const d = f.get('data') ? new Date(f.get('data')).toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' }) : '';
     const msg = `Buongiorno! Vorrei prenotare un tavolo alla Trattoria Luce.\nNome: ${f.get('nome')}\nData: ${d}\nOra: ${f.get('ora')}\nPersone: ${f.get('persone')}${f.get('note') ? `\nNote: ${f.get('note')}` : ''}\nGrazie!`;
-    window.open('https://wa.me/393444091624?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    window.open('https://wa.me/393514969933?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
   const dateInput = document.querySelector('input[name="data"]');
   dateInput.min = new Date().toISOString().slice(0, 10);

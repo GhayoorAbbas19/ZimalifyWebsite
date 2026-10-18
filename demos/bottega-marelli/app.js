@@ -13,7 +13,7 @@
     { n: 'Segnalibro in ottone', c: 'Regali', p: 11, e: '🔖', bg: '#E8EFE9' },
     { n: 'Set lettere e buste, 20 pezzi', c: 'Carta', p: 14, e: '✉️', bg: '#E3ECF7' }
   ];
-  const WA = 'https://wa.me/393444091624?text=';
+  const WA = 'https://wa.me/393514969933?text=';
   const grid = document.getElementById('grid'), filters = document.getElementById('filters');
   const cats = ['Tutti', ...new Set(PRODUCTS.map(p => p.c))];
   let cur = 'Tutti';

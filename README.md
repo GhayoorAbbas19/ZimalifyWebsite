@@ -63,7 +63,7 @@ Two portfolio demos shown in the "Work / Demos" section of the home page. Fictio
 | Pizzeria | `/demo/pizzeria/` and `/demo/pizzeria/menu.html` | Cream / terracotta / dark green, Playfair Display. Menu data in `js/menu-data.js` |
 | Grill Milano | `/demo/ristorante-pakistano/` and `/demo/ristorante-pakistano/menu.html` | Deep green / saffron / charcoal, Cormorant Garamond. Italian + English toggle; UI strings in `js/app.js`, dish descriptions in `js/menu-data.js` |
 
-To replace before reuse for a real client: the WhatsApp number (search `wa.me/393444091624`), the pre-filled WhatsApp text, the address and the Google Maps `q=` query in the map iframe, the phone number, the Instagram link, the JSON-LD block in `<head>`, and the photos in `assets/` (regenerate `og.jpg` 1200×630 and the QR with `python3 -c "import segno; segno.make('<menu url>').save('assets/qr-menu.svg', scale=8)"`). Photo credits (Unsplash usernames) are in each footer and in `demo/credits.json`.
+To replace before reuse for a real client: the WhatsApp number (search `wa.me/393514969933`), the pre-filled WhatsApp text, the address and the Google Maps `q=` query in the map iframe, the phone number, the Instagram link, the JSON-LD block in `<head>`, and the photos in `assets/` (regenerate `og.jpg` 1200×630 and the QR with `python3 -c "import segno; segno.make('<menu url>').save('assets/qr-menu.svg', scale=8)"`). Photo credits (Unsplash usernames) are in each footer and in `demo/credits.json`.
 
 ## Earlier demo sites (`demos/`)
 
@@ -79,7 +79,7 @@ All WhatsApp links point to the Zimalify number so prospects who try a demo reac
 ## Contact channels
 
 - Email: contact@zimalify.com (form falls back to the visitor's mail app until a Formspree ID is set).
-- WhatsApp: +39 344 409 1624, floating button bottom-left plus a row in the contact list. The number lives in `index.html` (two `wa.me` links) and the greeting text in `js/i18n.js` (`wa.msg`).
+- WhatsApp: +39 351 496 9933, floating button bottom-left plus a row in the contact list. The number lives in `index.html` (two `wa.me` links) and the greeting text in `js/i18n.js` (`wa.msg`).
 
 ## Languages
 
