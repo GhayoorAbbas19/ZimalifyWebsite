@@ -320,6 +320,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 /* ---------- About ---------- */
 .about { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: start; }
+.about--single { grid-template-columns: 1fr; max-width: 820px; }
 .about__copy p { color: var(--muted); font-size: 1.05rem; }
 .values { display: grid; gap: 14px; margin-top: 28px; }
 .value { display: grid; gap: 2px; padding: 16px 18px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--border); }

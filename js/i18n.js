@@ -69,11 +69,6 @@ window.ZIMALIFY_I18N = {
     "v1.t": "Ship, then listen", "v1.s": "Real users and real reviews drive our roadmap.",
     "v2.t": "Platform-true", "v2.s": "iOS should feel like iOS. Android should feel like Android.",
     "v3.t": "Own your work", "v3.s": "Your accounts, your code, your data. Always.",
-    "about.role1": "Founder",
-    "about.quote1": "\"Every app we ship starts with one question: would we keep it on our own phones? That standard shapes the products we build and the client work we take on.\"",
-    "about.role2": "Co-Founder & CEO",
-    "about.quote2": "\"I have shipped apps on both stores for years, handled the rejections, the one-star reviews and the 2 a.m. crash reports. That is exactly why client work at Zimalify is calm, honest and predictable.\"",
-    "about.email": "Email",
 
     "contact.eyebrow": "Contact", "contact.title": "Let's build something worth keeping",
     "contact.sub": "Tell us about your idea, your existing app, or just say hello. We reply within one business day.",
@@ -168,11 +163,6 @@ window.ZIMALIFY_I18N = {
     "v1.t": "Pubblica, poi ascolta", "v1.s": "Utenti e recensioni reali guidano la nostra roadmap.",
     "v2.t": "Fedeli alla piattaforma", "v2.s": "iOS deve sembrare iOS. Android deve sembrare Android.",
     "v3.t": "Il lavoro è tuo", "v3.s": "I tuoi account, il tuo codice, i tuoi dati. Sempre.",
-    "about.role1": "Fondatore",
-    "about.quote1": "\"Ogni app che pubblichiamo parte da una domanda: la terremmo sul nostro telefono? Quello standard guida i prodotti che costruiamo e i progetti che accettiamo.\"",
-    "about.role2": "Co-fondatore e CEO",
-    "about.quote2": "\"Pubblico app su entrambi gli store da anni: ho gestito i rifiuti, le recensioni a una stella e i report di crash alle 2 di notte. È proprio per questo che lavorare con Zimalify è sereno, onesto e prevedibile.\"",
-    "about.email": "Email",
 
     "contact.eyebrow": "Contatti", "contact.title": "Costruiamo qualcosa che valga la pena tenere",
     "contact.sub": "Raccontaci la tua idea, la tua app esistente, o semplicemente salutaci. Rispondiamo entro un giorno lavorativo.",
